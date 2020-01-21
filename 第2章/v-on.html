@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script src="../vue.min.js"></script>
+	<style>
+		.test{
+			width:300px;
+			height: 200px;
+			border: 1px solid;
+		}
+	</style>	
+</head>
+<body>
+	<div id="app" :class="gettt">
+		{{sum}}
+		<!-- <p v-if="show">这是一段文本</p>	 -->
+		<!-- <button v-on:click="alert">点击隐藏</button>	 -->
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				show:true,
+				x:1000,
+				gettt:'test',
+			},
+			// created:function(){
+			// 	// console.log(this.$el)
+			// 	alert('121212')
+			// },
+			// mounted:function(){
+			// 	console.log(this.$el)
+			// 	// alert('121212')
+			// },
+			methods:{
+				handleClose:function() {
+					this.show = false
+				},
+				alert:function(){
+					// console.log(this.$el)
+					return 100
+				},
+				gettest:function(){
+					return this.gettt
+				}
+			},
+			computed:{
+				sum:function(){
+					return 'test'
+				}
+			}		
+		})
+	</script>
+</body>
+</html>

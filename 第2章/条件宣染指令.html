@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script src="../vue.min.js"></script>
+	<style>
+		.test{
+			width:300px;
+			height: 200px;
+			border: 1px solid;
+		}
+	</style>	
+</head>
+<body>
+	<div id="app">
+		<template v-if="type === 'name'">
+			<label>用户名：</label>
+			<input placeholder="输入用户名" key="name-input">
+		</template>
+		<template v-else>
+			<label>邮箱：</label>
+			<input placeholder="输入邮箱" key="mail-input">
+		</template>
+		<button @click="handleToggleClick">切换输入类型</button>
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				// status:10
+				type:'name',
+			},
+			methods:{
+				handleToggleClick:function(){
+					this.type = this.type === 'name'?'mail':'name'
+				}
+			}
+		})
+	</script>
+</body>
+</html>

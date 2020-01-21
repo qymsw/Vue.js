@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车示例</title>
+</head>
+<body>
+	<div id="app" c-clock>
+		<template v-if=list.length>
+			<table>
+				<thead>
+					<tr></tr>
+				</thead>
+			</table>
+		</template>
+		<div v-else>购物车为空</div>
+	</div>
+	<script src="../vue.min.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				list:[
+					{
+						id:1,
+						name:'iPhone 7',
+						price:6188,
+						count:1
+					},
+					{
+						id:2,
+						name:'iPad Pro',
+						price:5188,
+						count:1
+					},
+					{
+						id:3,
+						name:'Macbook Pro',
+						price:21488,
+						count:1
+					},
+				]
+			},
+			computed:{
+
+			},
+			methods:{
+
+			}
+		})
+	</script>
+</body>
+</html>

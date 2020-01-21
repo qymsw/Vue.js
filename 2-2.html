@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-2</title>
+</head>
+<body>
+	<div id="app">
+		<span v-html="link"></span>
+		<p>{{link|aa}}</p>
+	</div>
+	<script src="vue.min.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				link:'<a href="#">这是一个连接</a>'
+			},			
+		})
+	</script>
+</body>
+</html>
